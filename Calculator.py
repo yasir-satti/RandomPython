@@ -58,9 +58,13 @@ while True:
             print(num1, " * ", num2, " = ", answer)
             validation = True
         elif operator == "/":
-            answer = num1 / num2
-            print(num1, " / ", num2, " = ", answer)
-            validation = True
+            if num1 != 0 and num2 != 0:
+                answer = num1 / num2
+                print(num1, " / ", num2, " = ", answer)
+                validation = True
+            else:
+                print("cannot divide by zero")
+                validation = True
         elif operator == "+":
             answer = num1 + num2
             print(num1, " + ", num2, " = ", answer)

@@ -1,7 +1,7 @@
 import os
 import random
 
-deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]*4 #declare deck array
+deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]*4
 
 def deal(deck): #function for dealing 2 cards to player and dealer at start
     hand = []
@@ -21,19 +21,23 @@ def deal(deck): #function for dealing 2 cards to player and dealer at start
 
 
 def reset_deck():
-    deck = []
+    global deck
     deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]*4
 
 def play_again(): #resets game
-    again = input("Do you want to play again? (Y/N) : ").lower()
-    if again == "y":
-        dealer_hand = []
-        player_hand = []
-        reset_deck()
-        game() 
-    else:
-        print ("Bye!")
-        exit()
+    while True:
+        again = input("Do you want to play again? (Y/N) : ").lower()
+        if again == "y":
+            dealer_hand = []
+            player_hand = []
+            game()
+            break
+        elif again == "n":
+            print ("Bye!")
+            exit()
+        else:
+            print("Invalid Input")
+            continue
 
 def total(hand): #quick maths
     total = 0
@@ -106,9 +110,11 @@ def score(dealer_hand, player_hand): #checks hand values vs each other
         print("Congratulations. Your score is higher than the dealer. You win\n")
 
 def game():
+    global deck
     choice = 0
     clear()
     print ("WELCOME TO BLACKJACK!\n")
+    reset_deck()
     dealer_hand = deal(deck) #generates starting hands
     player_hand = deal(deck)
     while choice != "q":
@@ -133,4 +139,4 @@ def game():
                 exit()
     
 if __name__ == "__main__":
-   game()
+    game()
