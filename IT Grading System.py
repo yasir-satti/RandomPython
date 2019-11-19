@@ -84,6 +84,7 @@ def display_results(name, Final_percent, HW_Grade, Assess_Grade, Final_exam_Grad
     
 
 def main():
+    clear()
     name = input("Please enter student's name: ")
     while True:
         try:
