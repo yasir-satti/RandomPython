@@ -19,12 +19,17 @@ def deal(deck): #function for dealing 2 cards to player and dealer at start
         hand.append(card) #places card into hand array
     return hand
 
+
+def reset_deck():
+    deck = []
+    deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]*4
+
 def play_again(): #resets game
     again = input("Do you want to play again? (Y/N) : ").lower()
     if again == "y":
         dealer_hand = []
         player_hand = []
-        deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]*4
+        reset_deck()
         game() 
     else:
         print ("Bye!")
