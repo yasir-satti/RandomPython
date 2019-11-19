@@ -41,16 +41,38 @@ def play_again(): #resets game
 
 def total(hand): #quick maths
     total = 0
+    ace_count = 0
     for card in hand:
         if card == "J" or card == "Q" or card == "K":
             total += 10
         elif card == "A":
+            ace_count += 1
+        else:
+            total += card
+    if ace_count != 0:
+        if ace_count == 1:
             if total >= 11:
                 total+= 1
             else:
                 total += 11
-        else:
-            total += card
+        elif ace_count == 2:
+            for i in range(2):
+                if total >= 11:
+                    total+= 1
+                else:
+                    total += 11
+        elif ace_count == 3:
+            for i in range(3):
+                if total >= 11:
+                    total+= 1
+                else:
+                    total += 11
+        elif ace_count == 4:
+            for i in range(4):
+                if total >= 11:
+                    total+= 1
+                else:
+                    total += 11
     return total
 
 def hit(hand): 
