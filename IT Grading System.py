@@ -31,7 +31,7 @@ def assessment(Assess_Grade):
     return A_percent
 
 def ICT_Final_Exam(Final_exam_Grade):
-    F_percent = Final_exam_Grade / 50
+    F_percent = Final_exam_Grade / 100
     F_percent = F_percent * 100
     return F_percent
 
@@ -68,7 +68,7 @@ def display_results(name, Final_percent, HW_Grade, Assess_Grade, Final_exam_Grad
         grade = "F"
         p_f = "Failed"
 
-    print("The Student ", name, " has ", p_f, " with a grade of ", grade)
+    print("The Student", name, "has", p_f, " with a grade of ", grade)
     time.sleep(1)
     print("Score Breakdown: ")
     time.sleep(1)
@@ -76,7 +76,7 @@ def display_results(name, Final_percent, HW_Grade, Assess_Grade, Final_exam_Grad
     time.sleep(1)
     print("Assessment: ", Assess_Grade, "/50 (Counts as 35%)")
     time.sleep(1)
-    print("Final Exam: ", Final_exam_Grade, "/100 (Counts as 40%)")
+    print("Final Exam: ", Final_exam_Grade, "/100 (Counts as 40%)  ")
     time.sleep(1)
     print("With a final weighted percentage of: ", Final_percent, "%")
     time.sleep(5)

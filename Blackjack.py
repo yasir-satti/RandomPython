@@ -130,9 +130,11 @@ def score(dealer_hand, player_hand): #checks hand values vs each other
     elif total(player_hand) > total(dealer_hand):
         print_results(dealer_hand, player_hand)            
         print("Congratulations. Your score is higher than the dealer. You win\n")
+        
     elif total(player_hand) == total(dealer_hand):
         print_results(dealer_hand, player_hand)            
         print("Your score is equal to the dealer. You drew\n")
+        
     else:
         print("wtf did you do?")
 
