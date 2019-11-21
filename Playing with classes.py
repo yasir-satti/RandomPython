@@ -2,6 +2,7 @@ import time
 import os
 from abc import ABC, abstractmethod
 
+
 class person():                                                             #Super class 
     def __init__(self, name, last_name):
         self.name = name
@@ -106,7 +107,11 @@ def main():
 def int_validator(num):    #Auto validates int user inputs
     try:
         num = int(num)
-        return True
+        if num < 0 or num > 100:
+            print("Invalid input")
+            return False
+        else:
+            return True
     except ValueError:
         print("Invalid input")
         return False
@@ -129,6 +134,7 @@ def clear():      #Clears screen on linux or windows
         os.system('CLS')
     if os.name == 'posix':
         os.system('clear')
+
 
 if __name__ == "__main__":
     main()

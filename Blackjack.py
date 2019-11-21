@@ -49,7 +49,7 @@ def total(hand): #quick maths
             ace_count += 1
         else:
             total += card
-    if ace_count != 0:
+    if ace_count != 0:  #Ace needs extended maths logic
         if ace_count == 1:
             if total >= 11:
                 total+= 1
@@ -73,6 +73,12 @@ def total(hand): #quick maths
                     total+= 1
                 else:
                     total += 11
+        while True:         #Protects against multiple aces being calculated incorrectly
+            if total > 21:
+                total -=11
+                total +=1
+            if total <=21:
+                break
     return total
 
 def hit(hand): 
